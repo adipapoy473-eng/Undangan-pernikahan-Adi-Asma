@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pernikahan - Adi & Asma</title>
+  
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- CSS File -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- WELCOME COVER OVERLAY -->
+  <div id="welcome-cover">
+    <div class="cover-card">
+      <p style="letter-spacing: 2px; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 10px;">The Wedding of</p>
+      <h1 class="font-decorative" style="font-size: 2.2rem; margin-bottom: 15px;">Adi & Asma</h1>
+      <p style="font-style: italic; font-size: 0.95rem; margin-bottom: 20px;">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+      <h3 style="margin-bottom: 25px; font-weight: 500;" id="guest-name">Tamu Undangan</h3>
+      <button class="btn-open" onclick="openInvitation()">
+        <i class="fa-regular fa-envelope-open" style="margin-right: 8px;"></i> Buka Undangan
+      </button>
+    </div>
+  </div>
+
+  <!-- MUSIC CONTROL -->
+  <div class="music-control" id="musicBtn" onclick="toggleMusic()">
+    <i class="fa-solid fa-music"></i>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <p style="letter-spacing: 3px; font-size: 0.9rem; text-transform: uppercase;" class="text-blue">Pesta Pernikahan</p>
+      <h1>Adi & Asma</h1>
+      <p style="font-style: italic; color: var(--light-text);">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari meismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya."</p>
+      
+      <!-- Countdown Timer -->
+      <div class="countdown-container" id="countdown">
+        <div class="countdown-box"><div class="number" id="days">00</div><div class="label">Hari</div></div>
+        <div class="countdown-box"><div class="number" id="hours">00</div><div class="label">Jam</div></div>
+        <div class="countdown-box"><div class="number" id="minutes">00</div><div class="label">Menit</div></div>
+        <div class="countdown-box"><div class="number" id="seconds">00</div><div class="label">Detik</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUPLE SECTION -->
+  <section class="section-padding" style="background: white;">
+    <div class="container">
+      <div class="section-title">
+        <h2>Mempelai Pria & Wanita</h2>
+        <p style="color: var(--light-text);">Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan.</p>
+        <div class="divider"><span></span><i class="fa-solid fa-heart text-gold"></i><span></span></div>
+      </div>
+
+      <div class="couple-grid">
+        <!-- Groom -->
+        <div class="couple-card">
+          <img src="img/ppadi.jpeg" alt="Romeo" class="couple-img">
+          <h3 style="font-size: 1.8rem; color: var(--primary-blue);">Adi S.kom</h3>
+          <p style="font-size: 0.9rem; color: var(--light-text); margin-top: 5px;">Putra Pertama dari<br>Bpk. Fulan & Ibu Fulanah</p>
+        </div>
+
+        <div class="text-center ampersand">&</div>
+
+        <!-- Bride -->
+        <div class="couple-card">
+          <img src="img/ppasma.jpg" alt="Juliet" class="couple-img">
+          <h3 style="font-size: 1.8rem; color: var(--primary-blue);">Asma Alifatul Ula</h3>
+          <p style="font-size: 0.9rem; color: var(--light-text); margin-top: 5px;">Putri Kedua dari<br>Bpk. Fulan & Ibu Fulanah</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENT DETAILS SECTION -->
+  <section class="section-padding event-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Rangkaian Acara</h2>
+        <p style="color: var(--light-text);">Insya Allah acara akan dilaksanakan pada:</p>
+        <div class="divider"><span></span><i class="fa-solid fa-calendar-check text-gold"></i><span></span></div>
+      </div>
+
+      <div class="event-grid">
+        <!-- Akademi -->
+        <div class="event-card">
+          <i class="fa-solid fa-ring event-icon"></i>
+          <h3 style="color: var(--primary-blue); margin-bottom: 10px;">Akad Nikah</h3>
+          <p style="font-weight: 600; color: var(--accent-blue);">Kamis, 05 November 2026</p>
+          <p style="font-size: 0.9rem; margin-top: 5px;">Pukul 08:00 WIB - Selesai</p>
+          <p style="font-size: 0.85rem; color: var(--light-text); margin-top: 15px;">
+            <strong>Masjid Agung Blue Velvet</strong><br>
+            Jl. Tawangbanteng Galunggung, Kab.Tasikmalaya
+          </p>
+          <a href="https://maps.google.com" target="_blank" class="btn-map">
+            <i class="fa-solid fa-location-dot"></i> Petunjuk Lokasi
+          </a>
+        </div>
+
+        <!-- Resepsi -->
+        <div class="event-card">
+          <i class="fa-solid fa-champagne-glasses event-icon"></i>
+          <h3 style="color: var(--primary-blue); margin-bottom: 10px;">Resepsi</h3>
+          <p style="font-weight: 600; color: var(--accent-blue);">Kamis, 05 November 2026"</p>
+          <p style="font-size: 0.9rem; margin-top: 5px;">Pukul 11:00 - 14:00 WIB</p>
+          <p style="font-size: 0.85rem; color: var(--light-text); margin-top: 15px;">
+            <strong>Grand Sapphire Ballroom</strong><br>
+            Jl. Tawangbanteng Galunggung, Kab.Tasikmalaya
+          </p>
+          <a href="https://maps.google.com" target="_blank" class="btn-map">
+            <i class="fa-solid fa-location-dot"></i> Petunjuk Lokasi
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section class="section-padding" style="background: white;">
+    <div class="container">
+      <div class="section-title">
+        <h2>Galeri Momen</h2>
+        <p style="color: var(--light-text);">Potret kebahagiaan kami</p>
+        <div class="divider"><span></span><i class="fa-solid fa-camera text-gold"></i><span></span></div>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80')">
+          <img src="img/galeri1.jpeg" alt="Gallery 1">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1000&q=80')">
+          <img src="img/galeri2.jpg" alt="Gallery 2">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=80')">
+          <img src="img/galeri3.jpg" alt="Gallery 3">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1000&q=80')">
+          <img src="img/galeri4.jpg" alt="Gallery 4">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP & GUESTBOOK -->
+  <section class="section-padding rsvp-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Konfirmasi Kehadiran</h2>
+        <p style="color: var(--light-text);">Berikan doa restu & konfirmasi kehadiran Anda</p>
+        <div class="divider"><span></span><i class="fa-solid fa-pen-to-square text-gold"></i><span></span></div>
+      </div>
+
+      <div class="rsvp-container">
+        <form id="rsvpForm" onsubmit="handleRSVP(event)">
+          <div class="form-group">
+            <label>Nama Lengkap</label>
+            <input type="text" id="rsvpName" class="form-control" placeholder="Masukkan nama Anda" required>
+          </div>
+          <div class="form-group">
+            <label>Konfirmasi Kehadiran</label>
+            <select id="rsvpStatus" class="form-control" required>
+              <option value="">-- Pilih Kehadiran --</option>
+              <option value="Hadir">Hadir</option>
+              <option value="Tidak Hadir">Tidak Hadir</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Pesan & Doa Restu</label>
+            <textarea id="rsvpMessage" class="form-control" rows="4" placeholder="Tuliskan ucapan & doa..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Kirim Ucapan</button>
+        </form>
+
+        <!-- Dynamic Wishes List -->
+        <div class="wishes-list" id="wishesList">
+          <!-- Sample Wish -->
+          <div class="wish-card">
+            <div class="wish-header">
+              <span class="wish-name">Ahmad Sahid</span>
+              <span class="wish-status">Hadir</span>
+            </div>
+            <p style="font-size: 0.9rem; color: #4A5568;">Selamat untuk Romeo dan Juliet! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIGITAL GIFT -->
+  <section class="section-padding" style="background: var(--light-blue);">
+    <div class="container">
+      <div class="section-title">
+        <h2>Hadiah Digital</h2>
+        <p style="color: var(--light-text);">Doa restu Anda adalah hadiah terindah. Namun jika ingin memberi lebih, Anda dapat menggunakan fitur di bawah ini:</p>
+        <div class="divider"><span></span><i class="fa-solid fa-gift text-gold"></i><span></span></div>
+      </div>
+
+      <div class="gift-grid">
+        <!-- Bank 1 -->
+        <div class="gift-card">
+          <div class="bank-logo"><i class="fa-solid fa-credit-card"></i> Dana</div>
+          <p style="font-size: 1.1rem; font-weight: 600;" id="acc-bca">082240279584</p>
+          <p style="font-size: 0.85rem; color: var(--light-text);">a.n. Adi</p>
+          <button class="btn-copy" onclick="copyToClipboard('1234567890')">
+            <i class="fa-regular fa-copy"></i> Salin No. Rekening
+          </button>
+        </div>
+
+        <!-- Bank 2 -->
+        <div class="gift-card">
+          <div class="bank-logo"><i class="fa-solid fa-credit-card"></i> Sea bank</div>
+          <p style="font-size: 1.1rem; font-weight: 600;" id="acc-mandiri">9876 5432 10</p>
+          <p style="font-size: 0.85rem; color: var(--light-text);">a.n. Adi</p>
+          <button class="btn-copy" onclick="copyToClipboard('9876543210')">
+            <i class="fa-regular fa-copy"></i> Salin No. Rekening
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="font-decorative" style="font-size: 1.2rem; margin-bottom: 5px;">Adi& Asma</p>
+    <p style="opacity: 0.8; font-size: 0.85rem;">Terima Kasih atas Doa & Restu Anda</p>
+  </footer>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightboxImg" src="" alt="Enlarged Image">
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast">Teks berhasil disalin!</div>
+
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>

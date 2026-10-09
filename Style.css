@@ -1,0 +1,543 @@
+/* ==========================================
+   1. VARIABLES & BASE STYLES
+   ========================================== */
+:root {
+  --primary-blue: #1A365D;    /* Deep Navy */
+  --accent-blue: #2B6CB0;     /* Royal Blue */
+  --light-blue: #EBF8FF;      /* Soft Ice Blue */
+  --gold-accent: #D69E2E;     /* Gold Accent */
+  --dark-text: #2D3748;
+  --light-text: #718096;
+  --white: #FFFFFF;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --shadow: 0 10px 30px rgba(26, 54, 93, 0.1);
+  --font-heading: 'Cinzel Decorative', cursive;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--dark-text);
+  background-color: #F7FAFC;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .brand {
+  font-family: var(--font-serif);
+}
+
+.font-decorative {
+  font-family: var(--font-heading);
+}
+
+/* Container Utility */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-center { text-align: center; }
+.text-gold { color: var(--gold-accent); }
+.text-blue { color: var(--accent-blue); }
+
+.section-padding {
+  padding: 80px 0;
+}
+
+/* Section Title Component */
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+  margin-bottom: 10px;
+}
+
+.section-title .divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.section-title .divider span {
+  height: 2px;
+  width: 60px;
+  background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+}
+
+/* ==========================================
+   2. WELCOME / COVER OVERLAY
+   ========================================== */
+#welcome-cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(26, 54, 93, 0.92), rgba(43, 108, 176, 0.88)), 
+              url("img/Sampul2.jpeg") center/cover no-repeat;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+#welcome-cover.opened {
+  transform: translateY(-100%);
+}
+
+.cover-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 500px;
+  width: 100%;
+}
+
+.btn-open {
+  background: linear-gradient(135deg, var(--accent-blue), var(--primary-blue));
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-open:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+}
+
+/* ==========================================
+   3. HERO SECTION
+   ========================================== */
+.hero {
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(to bottom, rgba(26,54,93,0.3), rgba(235,248,255,1)), 
+              url("img/Sampul1.jpeg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  padding: 50px 30px;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,0.8);
+  max-width: 600px;
+  margin: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  color: var(--primary-blue);
+  margin: 15px 0;
+}
+
+/* Countdown */
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.countdown-box {
+  background: var(--primary-blue);
+  color: var(--white);
+  padding: 12px;
+  border-radius: 12px;
+  min-width: 70px;
+}
+
+.countdown-box .number {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.countdown-box .label {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+/* ==========================================
+   4. COUPLE SECTION
+   ========================================== */
+.couple-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.couple-card {
+  text-align: center;
+  padding: 30px;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--accent-blue);
+}
+
+.couple-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 20px;
+  border: 4px solid var(--light-blue);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.ampersand {
+  font-size: 4rem;
+  color: var(--gold-accent);
+  font-family: var(--font-heading);
+}
+
+/* ==========================================
+   5. EVENT / D-DAY DETAILS
+   ========================================== */
+.event-section {
+  background-color: var(--light-blue);
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.event-card {
+  background: var(--white);
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.event-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+}
+
+.event-icon {
+  font-size: 2.5rem;
+  color: var(--accent-blue);
+  margin-bottom: 15px;
+}
+
+.btn-map {
+  display: inline-block;
+  background: var(--primary-blue);
+  color: var(--white);
+  padding: 10px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+}
+
+.btn-map:hover {
+  background: var(--accent-blue);
+}
+
+/* ==========================================
+   6. GALLERY SECTION
+   ========================================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 250px;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+/* Lightbox Modal */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  z-index: 10000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 8px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* ==========================================
+   7. RSVP & GUESTBOOK SECTION
+   ========================================== */
+.rsvp-section {
+  background: var(--white);
+}
+
+.rsvp-container {
+  max-width: 650px;
+  margin: 0 auto;
+  background: var(--light-blue);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--primary-blue);
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #CBD5E0;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.form-control:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.2);
+}
+
+.btn-submit {
+  width: 100%;
+  background: var(--primary-blue);
+  color: var(--white);
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: var(--accent-blue);
+}
+
+/* Messages List */
+.wishes-list {
+  margin-top: 40px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.wish-card {
+  background: var(--white);
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border-left: 3px solid var(--accent-blue);
+}
+
+.wish-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.wish-name {
+  font-weight: 600;
+  color: var(--primary-blue);
+}
+
+.wish-status {
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: #E2E8F0;
+}
+
+/* ==========================================
+   8. DIGITAL GIFT SECTION
+   ========================================== */
+.gift-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.gift-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 1px solid #E2E8F0;
+}
+
+.bank-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-blue);
+  margin-bottom: 15px;
+}
+
+.btn-copy {
+  background: var(--light-blue);
+  color: var(--accent-blue);
+  border: 1px solid var(--accent-blue);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+}
+
+.btn-copy:hover {
+  background: var(--accent-blue);
+  color: var(--white);
+}
+
+/* ==========================================
+   9. MUSIC PLAYER CONTROLLER
+   ========================================== */
+.music-control {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary-blue);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 999;
+  border: 2px solid var(--white);
+}
+
+.music-control.playing {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Footer */
+footer {
+  background: var(--primary-blue);
+  color: var(--white);
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.9rem;
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 10001;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
